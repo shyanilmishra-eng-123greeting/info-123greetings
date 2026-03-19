@@ -1,37 +1,29 @@
 import React from "react";
 
-// Types aren't strictly necessary in standard .jsx, but kept for structure
 const adFormats = [
   {
-    name: "Leaderboard",
-    sizes: ["728×90", "970×90"],
-    description: "High-visibility placement at the top of pages. Ideal for brand awareness campaigns.",
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/></svg>,
+    name: "Standard Banners",
+    description: "High-visibility Leaderboards (728x90) and Medium Rectangles (300x250) integrated into content.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect width="20" height="12" x="2" y="6" rx="2"/></svg>,
   },
   {
-    name: "Medium Rectangle",
-    sizes: ["300×250", "336×280"],
-    description: "Versatile ad unit embedded within content. Strong engagement and click-through rates.",
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/></svg>,
+    name: "High Impact Formats",
+    description: "Anchor ads and Interstitials with 5-second mandatory watch for maximum recall.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>,
   },
   {
-    name: "Skyscraper",
-    sizes: ["160×600", "300×600"],
-    description: "Tall sidebar placements with extended visibility as users scroll through content.",
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>,
+    name: "Mobile App & Web",
+    description: "Optimized units for iOS and Android, including rewarded interstitials and non-intrusive banners.",
+    icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>,
   },
-  {
-    name: "Mobile Banner",
-    sizes: ["320×50", "320×100"],
-    description: "Optimized for mobile devices. Reaches users on-the-go with a non-intrusive format.",
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>,
-  },
-  {
-    name: "Interstitial",
-    sizes: ["320×480", "768×1024"],
-    description: "Full-screen immersive ads displayed during natural content transitions.",
-    icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>,
-  },
+];
+
+const stats = [
+  { label: "Unique Monthly Visitors", value: "15M+" },
+  { label: "Monthly Page Views", value: "85M+" },
+  { label: "Monthly Impressions", value: "250M+" },
+  { label: "Email Database", value: "10M+" },
+  { label: "Social Reach", value: "2.5M+" },
 ];
 
 const MediaKitPage = () => {
@@ -39,109 +31,129 @@ const MediaKitPage = () => {
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden">
       
       {/* --- HERO SECTION --- */}
-      {/* Adjusted padding to clear the fixed navbar */}
-      <section className="relative pt-36 pb-16 lg:pt-44 lg:pb-24 px-10 lg:px-20 bg-slate-50/50">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative pt-36 pb-20 lg:pt-48 lg:pb-32 px-10 lg:px-20 bg-slate-50">
+        <div className="max-w-5xl mx-auto text-center">
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
-            <h1 className="text-6xl md:text-8xl font-light tracking-tight text-slate-900 mb-8 leading-tight">
-              Media <span className="font-serif italic text-rose-500">Kit.</span>
+            <h1 className="text-5xl md:text-7xl font-light tracking-tight text-slate-900 mb-6 leading-tight">
+              Advertise with <span className="font-serif italic text-rose-500">123Greetings.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed mx-auto max-w-2xl">
-              Reach millions of engaged users across 200+ countries. Explore our 
-              advertising formats designed to maximize your brand's impact.
+            <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed mx-auto max-w-2xl mb-12">
+              Reach millions of users sharing emotions worldwide. Partner with the premier destination for digital connections.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/media-kit.pdf" download className="inline-flex items-center gap-3 rounded-full bg-rose-500 px-10 py-5 text-lg font-medium text-white shadow-lg hover:bg-rose-600 transition-all hover:scale-105 active:scale-95">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                Download Media Kit (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- KEY STATISTICS --- */}
+      <section className="py-16 bg-white border-y border-slate-100 px-10 lg:px-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center group">
+                <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2 group-hover:text-rose-500 transition-colors">
+                  {stat.value}
+                </div>
+                <div className="text-sm uppercase tracking-widest text-slate-400 font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- AUDIENCE INSIGHTS --- */}
+      <section className="py-24 px-10 lg:px-20 bg-slate-50/30">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-16 text-center italic font-serif">Audience Insights</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { title: "Country Split", data: "60% USA, 15% UK/CAN, 25% ROW", icon: "🌎" },
+              { title: "Device Split", data: "75% Mobile, 25% Desktop", icon: "📱" },
+              { title: "OS Split", data: "55% iOS, 40% Android, 5% Other", icon: "⚙️" },
+              { title: "Engaged Users", data: "Average 4.5 mins session duration", icon: "❤️" },
+            ].map((item) => (
+              <div key={item.title} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                <div className="text-3xl mb-4">{item.icon}</div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-500 font-light">{item.data}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- ADVERTISING OPPORTUNITIES --- */}
+      <section className="py-24 px-10 lg:px-20">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-8 italic font-serif leading-tight">
+                High-Impact Ad <br/> Opportunities.
+              </h2>
+              <div className="space-y-8">
+                {adFormats.map((format) => (
+                  <div key={format.name} className="flex gap-6">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-rose-500">
+                      {format.icon}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium text-slate-900 mb-2">{format.name}</h3>
+                      <p className="text-slate-500 font-light leading-relaxed">{format.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Visual Placeholder for Ad Placements */}
+            <div className="bg-slate-100 rounded-[3rem] aspect-square lg:aspect-video flex items-center justify-center border-4 border-white shadow-2xl overflow-hidden relative group">
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-100/50 to-slate-200/50 group-hover:scale-110 transition-transform duration-700"></div>
+              <p className="relative text-slate-400 font-medium uppercase tracking-widest text-sm">Visual Ad Placement Preview</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* --- WHY ADVERTISE --- */}
-      <section className="py-24 px-10 lg:px-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-16 text-center italic font-serif">
-            Why Advertise with 123Greetings?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
+      <section className="py-24 bg-slate-900 text-white px-10 lg:px-20 rounded-[4rem] mx-4 mb-10">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl md:text-5xl font-light mb-16 italic font-serif">Why Partner With Us?</h2>
+          <div className="grid md:grid-cols-3 gap-12">
             {[
-              {
-                title: "Engaged Audience",
-                desc: "Users visit with high intent — to send heartfelt messages to loved ones. This emotional context drives attention and engagement.",
-              },
-              {
-                title: "Seasonal Peaks",
-                desc: "Massive traffic spikes during holidays like Valentine's Day, Christmas, Thanksgiving, and Mother's Day.",
-              },
-              {
-                title: "Global Reach",
-                desc: "Serving 15M+ monthly visitors from 200+ countries with strong presence in North America, Europe, and Asia.",
-              },
-            ].map((item, i) => (
-              <div
-                key={item.title}
-                // Delaying animation based on index to create a staggered effect
-                style={{ animationDelay: `${i * 150}ms` }}
-                className="rounded-[2rem] border border-slate-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
-              >
-                <h3 className="text-2xl font-light text-slate-900 mb-4">{item.title}</h3>
-                <p className="text-slate-500 font-light leading-relaxed text-base">{item.desc}</p>
+              { t: "Emotional Context", d: "Users send cards to loved ones, creating a positive mindset for your brand." },
+              { t: "Seasonal Spikes", d: "Massive scale during Mother's Day, Valentine's, and Global Festivals." },
+              { t: "Global Scale", d: "Reach a diverse, multi-cultural audience across 200+ territories." }
+            ].map(item => (
+              <div key={item.t}>
+                <h4 className="text-xl font-semibold mb-4 text-rose-400">{item.t}</h4>
+                <p className="text-slate-400 font-light leading-relaxed">{item.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* --- AD FORMATS --- */}
-      <section className="py-24 bg-slate-50/50 px-10 lg:px-20 border-y border-slate-100">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-light text-slate-900 mb-16 text-center italic font-serif">
-            Ad Formats & Sizes
-          </h2>
-          <div className="space-y-6">
-            {adFormats.map((format, i) => (
-              <div
-                key={format.name}
-                style={{ animationDelay: `${i * 100}ms` }}
-                className="flex flex-col sm:flex-row items-start gap-6 rounded-[2rem] border border-slate-100 bg-white p-8 hover:border-rose-200 transition-colors duration-300 animate-in fade-in slide-in-from-bottom-4 fill-mode-both shadow-sm hover:shadow-md"
-              >
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-rose-50 text-rose-500">
-                  {format.icon}
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-light text-slate-900 mb-2">{format.name}</h3>
-                  <p className="text-slate-500 font-light mb-4 text-base">{format.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {format.sizes.map((size) => (
-                      <span
-                        key={size}
-                        className="inline-flex items-center rounded-full border border-slate-100 bg-slate-50 px-4 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:bg-slate-100 transition-colors"
-                      >
-                        {size}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* --- CTA SECTION --- */}
+      {/* --- FINAL CTA --- */}
       <section className="py-24 px-10 lg:px-20 text-center">
-        <div className="max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-6xl font-light text-slate-900 mb-6 italic font-serif">
-            Interested in <span className="text-rose-500">advertising?</span>
+        <div className="max-w-3xl mx-auto bg-rose-50 rounded-[3rem] p-12 lg:p-20">
+          <h2 className="text-4xl md:text-5xl font-light text-slate-900 mb-8 italic font-serif">
+            Ready to grow your brand?
           </h2>
-          <p className="text-xl text-slate-500 font-light mb-10 leading-relaxed">
-            Get in touch with our advertising team to discuss custom packages and 
-            seasonal opportunities.
+          <p className="text-lg text-slate-600 font-light mb-10">
+            Get the full breakdown of demographics, placement rates, and custom seasonal packages.
           </p>
-          <a
-            href="mailto:advertise@123greetings.com"
-            className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-10 py-5 text-lg font-medium text-white shadow-xl hover:bg-rose-500 transition-all duration-300 hover:scale-105 active:scale-95"
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            Contact Our Ad Team
-          </a>
+          <div className="flex flex-col items-center gap-6">
+            <a href="/media-kit.pdf" className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-12 py-5 text-lg font-medium text-white hover:bg-rose-500 transition-all shadow-xl">
+               Download Full Media Kit
+            </a>
+            <p className="text-sm text-slate-400">Questions? Email us at <a href="mailto:advertise@123greetings.com" className="text-rose-500 underline">advertise@123greetings.com</a></p>
+          </div>
         </div>
       </section>
     </main>
