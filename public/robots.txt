@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: https://infodev.123greetings.com/sitemap.xml
