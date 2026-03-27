@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
+// Added a 'content' field to simulate the full story text
 const pressReleases = [
   {
     id: "1",
@@ -7,6 +8,8 @@ const pressReleases = [
     date: "2024-10-15",
     summary:
       "123Greetings.com marks its 25th anniversary, having delivered over 2 billion ecards to users across 200+ countries since its launch in 1999.",
+    content:
+      "NEW YORK, NY — October 15, 2024 — 123Greetings.com, the world's leading destination for free ecards, proudly announces its 25th anniversary. Since its inception in 1999, the platform has revolutionized the way people express emotions, successfully delivering over 2 billion ecards globally. \n\nTo commemorate this silver jubilee, the company is rolling out a special collection of animated anniversary cards and launching a community storytelling initiative. 'We are humbled to have been a part of millions of birthdays, anniversaries, and holidays over the past two and a half decades,' said the CEO. The company plans to continue its mission of fostering human connection through digital innovation for years to come.",
   },
   {
     id: "2",
@@ -14,6 +17,8 @@ const pressReleases = [
     date: "2024-06-20",
     summary:
       "The new mobile-first design delivers a seamless ecard browsing and sending experience across all devices, improving engagement by 35%.",
+    content:
+      "NEW YORK, NY — June 20, 2024 — Recognizing the shift in consumer behavior towards mobile devices, 123Greetings has officially rolled out its entirely revamped mobile-optimized website. The new interface prioritizes speed, ease of use, and a touch-friendly design. \n\nEarly metrics indicate a 35% increase in user engagement and a significant drop in bounce rates. 'Our users are on the go, and they want to send a heartfelt message to a loved one within seconds from their phones,' noted the Product Team. The update also includes faster loading times for heavy multimedia ecards and simplified sharing options directly to social media and messaging apps.",
   },
   {
     id: "3",
@@ -21,15 +26,22 @@ const pressReleases = [
     date: "2023-12-28",
     summary:
       "123Greetings.com saw a 20% increase in holiday season traffic, with Valentine's Day and Christmas being the highest traffic days of the year.",
+    content:
+      "NEW YORK, NY — December 28, 2023 — As the 2023 holiday season comes to a close, 123Greetings reports a record-breaking year in digital greetings. The platform experienced a massive 20% year-over-year increase in web traffic during the final quarter. \n\nChristmas Day and Valentine's Day remain the undisputed champions of ecard sending, but the company also noted a surprising 40% uptick in 'Just Because' and 'Thinking of You' cards throughout the year. This trend suggests a growing desire for continuous digital connection beyond traditional holidays. The server infrastructure handled the peak loads flawlessly, ensuring 100% uptime during the busiest hours.",
   },
 ];
 
 const PressReleasesPage = () => {
+  // State to track which press release is currently open in the modal
+  const [selectedPR, setSelectedPR] = useState(null);
+
+  // Function to close the modal
+  const closeModal = () => setSelectedPR(null);
+
   return (
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden">
       
       {/* --- HERO SECTION --- */}
-      {/* Adjusted padding to clear the fixed navbar */}
       <section className="relative pt-36 pb-16 lg:pt-44 lg:pb-24 px-10 lg:px-20 bg-slate-50/50">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
@@ -63,6 +75,7 @@ const PressReleasesPage = () => {
                 <article
                   key={pr.id}
                   style={{ animationDelay: `${i * 150}ms` }}
+                  onClick={() => setSelectedPR(pr)}
                   className="group relative pb-12 border-b border-slate-100 last:border-0 cursor-pointer animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12 transition-transform duration-500 group-hover:translate-x-2">
@@ -120,6 +133,50 @@ const PressReleasesPage = () => {
           </a>
         </div>
       </section>
+
+      {/* --- POPUP MODAL --- */}
+      {selectedPR && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4 animate-in fade-in duration-300"
+          onClick={closeModal} // Closes modal when clicking outside the box
+        >
+          <div 
+            className="bg-white rounded-[2rem] p-8 md:p-12 max-w-3xl w-full max-h-[85vh] overflow-y-auto relative shadow-2xl animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside the box
+          >
+            {/* Close Button */}
+            <button 
+              onClick={closeModal}
+              className="absolute top-6 right-6 p-2 text-slate-400 hover:text-rose-500 hover:bg-rose-50 rounded-full transition-colors"
+              aria-label="Close modal"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
+            {/* Modal Content */}
+            <div className="pr-8">
+              <time className="text-xs font-bold uppercase tracking-[0.2em] text-rose-500 block mb-4">
+                {new Date(selectedPR.date).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </time>
+              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-6 leading-tight">
+                {selectedPR.title}
+              </h2>
+              <div className="w-12 h-1 bg-rose-200 mb-8 rounded-full"></div>
+              
+              {/* Splitting the content by newline to render paragraphs properly */}
+              <div className="space-y-6 text-lg text-slate-600 font-light leading-relaxed">
+                {selectedPR.content.split('\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 };

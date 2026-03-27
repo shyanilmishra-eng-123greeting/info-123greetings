@@ -22,7 +22,11 @@ const stats = [
   { label: "Unique Monthly Visitors", value: "15M+" },
   { label: "Monthly Page Views", value: "85M+" },
   { label: "Monthly Impressions", value: "250M+" },
-  { label: "Email Database", value: "10M+" },
+  { 
+    label: "Email Database", 
+    value: "1M+", 
+    description: "500K US, 500K ROW with GEO targeting" 
+  },
   { label: "Social Reach", value: "2.5M+" },
 ];
 
@@ -41,9 +45,15 @@ const MediaKitPage = () => {
               Reach millions of users sharing emotions worldwide. Partner with the premier destination for digital connections.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/media-kit.pdf" download className="inline-flex items-center gap-3 rounded-full bg-rose-500 px-10 py-5 text-lg font-medium text-white shadow-lg hover:bg-rose-600 transition-all hover:scale-105 active:scale-95">
+              {/* UPDATED: Changed href to point to the exact PDF name in the public folder, removed download attribute, and added target="_blank" */}
+              <a 
+                href="/123Greetings%20Media%20Kit.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="inline-flex items-center gap-3 rounded-full bg-rose-500 px-10 py-5 text-lg font-medium text-white shadow-lg hover:bg-rose-600 transition-all hover:scale-105 active:scale-95"
+              >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                Download Media Kit (PDF)
+                View Media Kit (PDF)
               </a>
             </div>
           </div>
@@ -53,15 +63,20 @@ const MediaKitPage = () => {
       {/* --- KEY STATISTICS --- */}
       <section className="py-16 bg-white border-y border-slate-100 px-10 lg:px-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-start">
             {stats.map((stat) => (
-              <div key={stat.label} className="text-center group">
+              <div key={stat.label} className="text-center group flex flex-col items-center">
                 <div className="text-4xl md:text-5xl font-bold text-slate-900 mb-2 group-hover:text-rose-500 transition-colors">
                   {stat.value}
                 </div>
                 <div className="text-sm uppercase tracking-widest text-slate-400 font-medium">
                   {stat.label}
                 </div>
+                {stat.description && (
+                  <div className="mt-2 text-xs text-slate-500 font-light leading-relaxed max-w-[160px]">
+                    {stat.description}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -149,8 +164,14 @@ const MediaKitPage = () => {
             Get the full breakdown of demographics, placement rates, and custom seasonal packages.
           </p>
           <div className="flex flex-col items-center gap-6">
-            <a href="/media-kit.pdf" className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-12 py-5 text-lg font-medium text-white hover:bg-rose-500 transition-all shadow-xl">
-               Download Full Media Kit
+            {/* UPDATED: Same changes applied to the bottom CTA button */}
+            <a 
+              href="/123Greetings%20Media%20Kit.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-12 py-5 text-lg font-medium text-white hover:bg-rose-500 transition-all shadow-xl"
+            >
+               View Full Media Kit
             </a>
             <p className="text-sm text-slate-400">Questions? Email us at <a href="mailto:advertise@123greetings.com" className="text-rose-500 underline">advertise@123greetings.com</a></p>
           </div>
