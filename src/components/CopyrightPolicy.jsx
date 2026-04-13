@@ -14,7 +14,7 @@ const CopyrightPolicy = () => {
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden">
       
       {/* --- HERO / HEADER SECTION --- */}
-      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 px-10 lg:px-20 bg-slate-50/50">
+      <section className="relative pt-28 pb-12 lg:pt-40 lg:pb-20 px-6 sm:px-10 lg:px-20 bg-slate-50/50">
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-slate-100 mb-6 shadow-sm">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-500">Legal Framework</span>

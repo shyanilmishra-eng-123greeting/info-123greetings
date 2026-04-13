@@ -42,17 +42,17 @@ const PressReleasesPage = () => {
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-36 pb-16 lg:pt-44 lg:pb-24 px-10 lg:px-20 bg-slate-50/50">
+      <section className="relative pt-28 pb-16 lg:pt-44 lg:pb-24 px-6 sm:px-10 lg:px-20 bg-slate-50/50">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-in fade-in slide-in-from-bottom-8 duration-700">
             <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 rounded-full bg-white border border-slate-200">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-rose-500"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Newsroom</span>
             </div>
-            <h1 className="text-6xl md:text-8xl font-light tracking-tight text-slate-900 mb-8 leading-tight">
+            <h1 className="text-4xl md:text-8xl font-light tracking-tight text-slate-900 mb-8 leading-tight">
               Press <span className="font-serif italic text-rose-500">Releases.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-500 font-light leading-relaxed mx-auto max-w-2xl">
+            <p className="text-lg md:text-2xl text-slate-500 font-light leading-relaxed mx-auto max-w-2xl">
               Stay up to date with the latest news, milestones, and 
               announcements from 123Greetings.
             </p>
@@ -61,10 +61,10 @@ const PressReleasesPage = () => {
       </section>
 
       {/* --- PRESS RELEASE LIST --- */}
-      <section className="py-24 px-10 lg:px-20">
+      <section className="py-16 sm:py-24 px-6 sm:px-10 lg:px-20">
         <div className="max-w-4xl mx-auto">
           {pressReleases.length === 0 ? (
-            <div className="text-center py-20 border-2 border-dashed border-slate-100 rounded-[3rem]">
+            <div className="text-center py-20 border-2 border-dashed border-slate-100 rounded-[2rem] sm:rounded-[3rem]">
               <p className="text-slate-400 font-light italic">
                 No press releases yet. Check back soon!
               </p>
@@ -76,7 +76,7 @@ const PressReleasesPage = () => {
                   key={pr.id}
                   style={{ animationDelay: `${i * 150}ms` }}
                   onClick={() => setSelectedPR(pr)}
-                  className="group relative pb-12 border-b border-slate-100 last:border-0 cursor-pointer animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
+                  className="group relative pb-10 sm:pb-12 border-b border-slate-100 last:border-0 cursor-pointer animate-in fade-in slide-in-from-bottom-8 fill-mode-both"
                 >
                   <div className="flex flex-col md:flex-row md:items-start gap-4 md:gap-12 transition-transform duration-500 group-hover:translate-x-2">
                     {/* Date Sidebar */}
@@ -99,7 +99,7 @@ const PressReleasesPage = () => {
                       <h2 className="text-2xl md:text-3xl font-light text-slate-900 leading-snug group-hover:text-rose-500 transition-colors duration-300">
                         {pr.title}
                       </h2>
-                      <p className="text-lg text-slate-500 font-light leading-relaxed">
+                      <p className="text-base sm:text-lg text-slate-500 font-light leading-relaxed">
                         {pr.summary}
                       </p>
                       <div className="flex items-center gap-2 text-slate-900 font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
@@ -116,18 +116,18 @@ const PressReleasesPage = () => {
       </section>
 
       {/* --- NEWSLETTER / FOOTER CTA --- */}
-      <section className="py-24 px-10 lg:px-20 text-center bg-slate-50/50">
+      <section className="py-20 lg:py-24 px-6 sm:px-10 lg:px-20 text-center bg-slate-50/50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-light text-slate-900 mb-6 italic font-serif">
             For Media Inquiries
           </h2>
-          <p className="text-lg text-slate-500 font-light mb-8">
+          <p className="text-base sm:text-lg text-slate-500 font-light mb-8">
             Are you a member of the press? Reach out to our communications team 
             for interviews, assets, and more information.
           </p>
           <a
             href="mailto:press@123greetings.com"
-            className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-10 py-5 text-white shadow-xl hover:bg-rose-500 transition-all duration-300 hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-3 rounded-full bg-slate-900 px-10 py-4 sm:px-10 sm:py-5 text-white shadow-xl hover:bg-rose-500 transition-all duration-300 hover:scale-105 active:scale-95"
           >
             Contact PR Team
           </a>
@@ -137,38 +137,37 @@ const PressReleasesPage = () => {
       {/* --- POPUP MODAL --- */}
       {selectedPR && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm p-4 animate-in fade-in duration-300"
-          onClick={closeModal} // Closes modal when clicking outside the box
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm p-4 animate-in fade-in duration-300"
+          onClick={closeModal}
         >
           <div 
-            className="bg-white rounded-[2rem] p-8 md:p-12 max-w-3xl w-full max-h-[85vh] overflow-y-auto relative shadow-2xl animate-in zoom-in-95 duration-300"
-            onClick={(e) => e.stopPropagation()} // Prevents closing when clicking inside the box
+            className="bg-white rounded-[2rem] p-6 md:p-12 max-w-3xl w-full max-h-[85vh] overflow-y-auto relative shadow-2xl animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button 
               onClick={closeModal}
-              className="absolute top-6 right-6 p-2 text-slate-400 hover:text-rose-500 hover:bg-rose-50 rounded-full transition-colors"
+              className="absolute top-4 right-4 md:top-6 md:right-6 p-2 text-slate-400 hover:text-rose-500 hover:bg-rose-50 rounded-full transition-colors z-10"
               aria-label="Close modal"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
 
             {/* Modal Content */}
-            <div className="pr-8">
-              <time className="text-xs font-bold uppercase tracking-[0.2em] text-rose-500 block mb-4">
+            <div className="md:pr-8">
+              <time className="text-xs font-bold uppercase tracking-[0.2em] text-rose-500 block mb-3 md:mb-4">
                 {new Date(selectedPR.date).toLocaleDateString("en-US", {
                   month: "long",
                   day: "numeric",
                   year: "numeric",
                 })}
               </time>
-              <h2 className="text-3xl md:text-4xl font-light text-slate-900 mb-6 leading-tight">
+              <h2 className="text-2xl md:text-4xl font-light text-slate-900 mb-4 md:mb-6 leading-tight">
                 {selectedPR.title}
               </h2>
-              <div className="w-12 h-1 bg-rose-200 mb-8 rounded-full"></div>
+              <div className="w-12 h-1 bg-rose-200 mb-6 md:mb-8 rounded-full"></div>
               
-              {/* Splitting the content by newline to render paragraphs properly */}
-              <div className="space-y-6 text-lg text-slate-600 font-light leading-relaxed">
+              <div className="space-y-4 md:space-y-6 text-base md:text-lg text-slate-600 font-light leading-relaxed">
                 {selectedPR.content.split('\n').map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}

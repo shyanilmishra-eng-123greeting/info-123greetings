@@ -1,66 +1,62 @@
+import { Link } from "react-router-dom";
+
 export default function Sitemap() {
   return (
-    <div className="max-w-5xl mx-auto px-5 py-10 font-sans">
-      <h1 className="text-3xl text-center mb-10 font-semibold">Sitemap</h1>
+    <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden pt-32 pb-24 px-6 sm:px-10 lg:px-20">
+      <div className="max-w-7xl mx-auto">
+        
+        <header className="mb-16 text-center lg:text-left">
+          <h1 className="text-4xl md:text-6xl font-light tracking-tight text-slate-900 leading-tight mb-4">
+            Site <span className="font-serif italic text-rose-500">Map.</span>
+          </h1>
+          <p className="text-lg text-slate-500 font-light max-w-2xl leading-relaxed">
+            Navigate through all sections of the 123Greetings corporate and legal information site.
+          </p>
+        </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {/* Main Pages */}
-        <div className="bg-gray-50 p-5 rounded-xl shadow-sm">
-          <h3 className="text-lg mb-3 font-medium">Main Pages</h3>
-          <ul className="space-y-2">
-            <li><a href="/" className="text-slate-500 hover:text-rose-600 transition">Home</a></li>
-            <li><a href="/corporate-info" className="text-slate-500 hover:text-rose-600 transition">Corporate Info</a></li>
-            <li><a href="/media-kit" className="text-slate-500 hover:text-rose-600 transition">Media Kit</a></li>
-            <li><a href="/press-releases" className="text-slate-500 hover:text-rose-600 transition">Press Releases</a></li>
-          </ul>
+          {/* Main Pages */}
+          <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-sm transition-all hover:bg-white hover:shadow-xl group">
+            <h3 className="text-xl font-serif italic text-slate-900 mb-6 group-hover:text-rose-500 transition-colors">Main Pages</h3>
+            <ul className="space-y-4">
+              <li><Link to="/" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Corporate Info</Link></li>
+              <li><Link to="/media-kit" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Media Kit</Link></li>
+              <li><Link to="/press-releases" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Press Releases</Link></li>
+            </ul>
+          </div>
+
+          {/* Legal Pages */}
+          <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-sm transition-all hover:bg-white hover:shadow-xl group">
+            <h3 className="text-xl font-serif italic text-slate-900 mb-6 group-hover:text-rose-500 transition-colors">Legal</h3>
+            <ul className="space-y-4">
+              <li><Link to="/copyright-policy" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Copyright Policy</Link></li>
+              <li><Link to="/terms-of-use" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Terms of Use</Link></li>
+              <li><Link to="/privacy-policy" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Privacy Policy</Link></li>
+              <li><Link to="/cookie-policy" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Cookie Policy</Link></li>
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div className="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-sm transition-all hover:bg-white hover:shadow-xl group">
+            <h3 className="text-xl font-serif italic text-slate-900 mb-6 group-hover:text-rose-500 transition-colors">Support</h3>
+            <ul className="space-y-4">
+              <li><Link to="/contact-us" className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block">Contact Us</Link></li>
+              <li>
+                <a 
+                  href="http://help.123greetings.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-slate-500 hover:text-rose-500 transition-all hover:translate-x-1 inline-block"
+                >
+                  Help Center
+                </a>
+              </li>
+            </ul>
+          </div>
+
         </div>
-
-        {/* Legal (External Links) */}
-        <div className="bg-gray-50 p-5 rounded-xl shadow-sm">
-          <h3 className="text-lg mb-3 font-medium">Legal</h3>
-          <ul className="space-y-2">
-            <li>
-              <a href="https://info.123greetings.com/company/copyright_policy.html" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-rose-600 font-light transition-all hover:translate-x-1 inline-block">
-                Copyright Policy
-              </a>
-            </li>
-            <li>
-              <a href="https://info.123greetings.com/company/terms_of_use.html" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-rose-600 font-light transition-all hover:translate-x-1 inline-block">
-                Terms of Use
-              </a>
-            </li>
-            <li>
-              <a href="https://info.123greetings.com/company/privacy_policy.html" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-rose-600 font-light transition-all hover:translate-x-1 inline-block">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="https://info.123greetings.com/company/cookie_policy.html" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-rose-600 font-light transition-all hover:translate-x-1 inline-block">
-                Cookie Policy
-              </a>
-            </li>
-            <li>
-              <a href="https://info.123greetings.com/company/contactus.html" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-rose-600 font-light transition-all hover:translate-x-1 inline-block">
-                Contact Us
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* Support */}
-        <div className="bg-gray-50 p-5 rounded-xl shadow-sm">
-          <h3 className="text-lg mb-3 font-medium">Support</h3>
-          <ul className="space-y-2">
-            <li>
-              <a href="/contact-us" className="text-slate-500 hover:text-rose-600 transition">
-                Contact Us (Internal)
-              </a>
-            </li>
-          </ul>
-        </div>
-
       </div>
-    </div>
+    </main>
   );
 }

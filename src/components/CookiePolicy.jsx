@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CookiePolicy = () => {
   const cookieTypes = [
@@ -28,12 +29,12 @@ const CookiePolicy = () => {
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden">
       
       {/* --- HEADER --- */}
-      <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 px-10 lg:px-20 bg-slate-50/50">
+      <section className="relative pt-28 pb-12 sm:pb-16 lg:pt-40 lg:pb-20 px-6 sm:px-10 lg:px-20 bg-slate-50/50">
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-slate-100 mb-6 shadow-sm">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-500">Privacy Transparency</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-slate-900 leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-light tracking-tight text-slate-900 leading-tight mb-6">
             Our <span className="font-serif italic text-rose-500">Cookie Policy</span>
           </h1>
           <p className="text-lg text-slate-500 font-light max-w-2xl mx-auto leading-relaxed">
@@ -43,11 +44,11 @@ const CookiePolicy = () => {
       </section>
 
       {/* --- CONTENT --- */}
-      <section className="py-20 px-10 lg:px-20">
+      <section className="py-16 sm:py-20 px-6 sm:px-10 lg:px-20">
         <div className="max-w-5xl mx-auto">
           
           {/* Intro Grid */}
-          <div className="grid lg:grid-cols-2 gap-16 mb-24 items-start">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-16 sm:mb-24 items-start">
             <div className="space-y-6">
               <h2 className="text-3xl font-light text-slate-900 italic font-serif">What are cookies?</h2>
               <p className="text-slate-600 leading-relaxed font-light text-lg">
@@ -57,24 +58,24 @@ const CookiePolicy = () => {
                 Some pages also contain <span className="text-rose-500 font-medium italic">web beacons</span> (clear gifs) that track the effectiveness of campaigns without identifying you personally.
               </p>
             </div>
-            <div className="p-10 bg-slate-900 rounded-[2.5rem] text-white space-y-4">
+            <div className="p-8 sm:p-10 bg-slate-900 rounded-[2rem] sm:rounded-[2.5rem] text-white space-y-4">
               <h3 className="text-rose-400 uppercase text-[10px] font-bold tracking-[0.2em]">Our Stance</h3>
-              <p className="text-xl font-light leading-relaxed">
+              <p className="text-xl font-light leading-relaxed text-slate-200">
                 If you do not accept this Cookie Policy, please do not use this site. We believe your experience would be adversely affected without them.
               </p>
             </div>
           </div>
 
           {/* Types of Cookies Grid */}
-          <div className="mb-24">
+          <div className="mb-16 sm:mb-24">
             <h2 className="text-3xl font-light text-slate-900 italic font-serif mb-12 text-center">How we categorize cookies</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {cookieTypes.map((type) => (
-                <div key={type.title} className="p-8 rounded-[2rem] border border-slate-100 bg-white hover:border-rose-100 hover:shadow-xl hover:shadow-rose-100/20 transition-all group">
+                <div key={type.title} className="p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-slate-100 bg-white hover:border-rose-100 hover:shadow-xl transition-all group">
                   <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center text-rose-500 mb-6 group-hover:bg-rose-500 group-hover:text-white transition-colors">
                     {type.icon}
                   </div>
-                  <h3 className="text-lg font-medium text-slate-900 mb-3">{type.title}</h3>
+                  <h3 className="text-lg font-medium text-slate-900 mb-2 sm:mb-3">{type.title}</h3>
                   <p className="text-slate-500 text-sm font-light leading-relaxed">{type.desc}</p>
                 </div>
               ))}
@@ -124,13 +125,13 @@ const CookiePolicy = () => {
           </div>
 
           {/* Footer Info */}
-          <div className="mt-24 pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="text-slate-400 text-xs uppercase tracking-widest">
+          <div className="mt-20 sm:mt-24 pt-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-slate-400 text-xs uppercase tracking-widest text-center">
               Last Updated: February 24, 2026
             </div>
             <div className="flex gap-8">
-              <a href="/privacy-policy" className="text-slate-500 hover:text-rose-500 text-sm font-medium transition-colors">Privacy Policy</a>
-              <a href="/contact-us" className="text-slate-500 hover:text-rose-500 text-sm font-medium transition-colors">Contact Us</a>
+              <Link to="/privacy-policy" className="text-slate-500 hover:text-rose-500 text-sm font-medium transition-colors">Privacy Policy</Link>
+              <Link to="/contact-us" className="text-slate-500 hover:text-rose-500 text-sm font-medium transition-colors">Contact Us</Link>
             </div>
           </div>
         </div>

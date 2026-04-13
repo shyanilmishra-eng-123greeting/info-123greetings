@@ -44,16 +44,14 @@ const ContactUs = () => {
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden">
       
       {/* --- HEADER SECTION --- */}
-      {/* Reduced padding for mobile (pt-24) vs desktop (lg:pt-40) */}
-      <section className="relative pt-24 pb-12 lg:pt-40 lg:pb-16 px-6 lg:px-20">
+      <section className="relative pt-28 pb-12 lg:pt-40 lg:pb-16 px-6 sm:px-10 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
             <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-100">
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-500 underline underline-offset-4">Get In Touch</span>
             </div>
             
-            {/* Fluid typography: text-3xl for mobile, text-6xl for large screens */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-light tracking-tight text-slate-900 leading-tight">
+            <h1 className="text-3xl md:text-5xl lg:text-7xl font-light tracking-tight text-slate-900 leading-tight">
               Let's start a <br className="hidden sm:block" />
               <span className="font-serif italic text-rose-500">conversation.</span>
             </h1>
@@ -66,9 +64,8 @@ const ContactUs = () => {
       </section>
 
       {/* --- CONTACT GRID --- */}
-      <section className="pb-24 px-6 lg:px-20">
+      <section className="pb-24 px-6 sm:px-10 lg:px-20">
         <div className="max-w-6xl mx-auto">
-          {/* Grid: 1 column on mobile, 2 on tablet, 3 on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {contactOptions.map((option, index) => (
               <a 
@@ -99,16 +96,14 @@ const ContactUs = () => {
           </div>
 
           {/* HELP CENTER CALLOUT */}
-          {/* Rounded corners reduced for mobile (rounded-[2rem]) */}
-          <div className="mt-12 md:mt-20 p-8 md:p-10 lg:p-16 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-slate-900 to-slate-800 text-white flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="space-y-2 text-center md:text-left">
-              <h2 className="text-xl md:text-2xl font-light font-serif italic">Need immediate help?</h2>
-              <p className="text-slate-400 font-light text-sm md:text-base">Check our help center for quick answers to common questions.</p>
+          <div className="mt-12 md:mt-20 p-8 md:p-12 lg:p-16 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-slate-900 to-slate-800 text-white flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="space-y-2 text-center lg:text-left">
+              <h2 className="text-2xl md:text-3xl font-light font-serif italic mb-2">Need immediate help?</h2>
+              <p className="text-slate-400 font-light text-sm md:text-base max-w-lg">Check our help center for quick answers to common questions about sending cards, account management, and more.</p>
             </div>
-            {/* Full-width button on mobile */}
             <a 
               href="http://help.123greetings.com" 
-              className="w-full md:w-auto text-center px-8 py-4 bg-white text-slate-900 rounded-full font-medium hover:bg-rose-500 hover:text-white transition-all hover:scale-105 active:scale-95"
+              className="w-full lg:w-auto text-center px-10 py-5 bg-white text-slate-900 rounded-full font-bold hover:bg-rose-500 hover:text-white transition-all hover:scale-105 active:scale-95 shadow-xl"
             >
               Visit Help Center
             </a>

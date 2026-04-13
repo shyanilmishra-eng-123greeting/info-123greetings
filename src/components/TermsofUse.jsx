@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TermsofUse = () => {
   const sections = [
@@ -20,7 +21,7 @@ const TermsofUse = () => {
     <main className="min-h-screen bg-white font-sans selection:bg-rose-100 overflow-x-hidden">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative pt-32 pb-12 lg:pt-40 lg:pb-16 px-10 lg:px-20 bg-slate-50/50 border-b border-slate-100">
+      <section className="relative pt-28 pb-12 lg:pt-40 lg:pb-16 px-6 sm:px-10 lg:px-20 bg-slate-50/50 border-b border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-slate-100 mb-6 shadow-sm">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-500 underline underline-offset-4">User Agreement</span>
@@ -71,7 +72,7 @@ const TermsofUse = () => {
               <div className="prose prose-slate max-w-none font-light text-slate-600 leading-relaxed">
                 <p>
                   By using or visiting this Website, you enter into a User Agreement with 123Greetings.com, Inc. 
-                  This includes assent to these Terms of Use and our <a href="/privacy-policy" className="text-rose-500 hover:underline">Privacy Policy</a>. 
+                  This includes assent to these Terms of Use and our <Link to="/privacy-policy" className="text-rose-500 hover:underline">Privacy Policy</Link>. 
                   If you do not agree, please discontinue use of the Website immediately.
                 </p>
                 <div className="p-6 bg-slate-900 rounded-3xl text-white mt-8">

@@ -18,13 +18,12 @@ import ContactUs from './components/ContactUs';
 function App() {
   return (
     /* w-full and overflow-x-hidden are key to preventing the "side-scroll" bug on mobile */
-    <div className="flex flex-col min-h-screen w-full bg-white font-sans antialiased overflow-x-hidden">
+    <div className="flex flex-col min-h-screen w-full bg-white font-sans antialiased overflow-x-hidden selection:bg-rose-100 selection:text-rose-900">
       <Navbar />
       
       <ScrollToTop /> 
 
-      {/* Added w-full to main to ensure it fills the viewport */}
-      <main className="flex-grow w-full">
+      <main className="flex-grow w-full relative">
         <Routes>
           <Route path="/" element={<CorporateInfoPage />} />
           <Route path="/media-kit" element={<MediaKitPage />} />
